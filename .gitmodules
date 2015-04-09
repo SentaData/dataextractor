@@ -1,0 +1,3 @@
+[submodule "dataextractorlib"]
+	path = dataextractorlib
+	url = git@github.com:SentaData/dataextractorlib.git

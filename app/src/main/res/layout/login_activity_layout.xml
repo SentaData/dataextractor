@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="8dp"
+    android:background="@android:color/background_dark">
+
+    <EditText
+        android:id="@+id/et_url"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/primary_text_light"
+        style="@style/editText_style_blue"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="7"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:textColorHint="#666"
+        android:paddingTop="8dp"
+        android:hint="@string/url"
+        android:inputType="textUri"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_below="@id/et_url"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/primary_text_light"
+        style="@style/editText_style_blue"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="7"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:textColorHint="#666"
+        android:paddingTop="8dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_below="@id/et_email"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/primary_text_light"
+        style="@style/editText_style_blue"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="7"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:textColorHint="#666"
+        android:paddingTop="8dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_below="@id/et_password"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login" />
+
+    <CheckBox
+        android:id="@+id/cb_rememberme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remember_me"
+        android:textColor="@android:color/primary_text_dark"
+        android:layout_below="@id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_demo_user"
+        android:id="@+id/btn_setdefaultuser"
+        android:layout_below="@+id/cb_rememberme"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pg_logging_in"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_setdefaultuser"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

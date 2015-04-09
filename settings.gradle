@@ -1,0 +1,2 @@
+include ':app', ':dataextractorlib'
+project(':dataextractorlib').projectDir = new File('./dataextractorlib/lib')
