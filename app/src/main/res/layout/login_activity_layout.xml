@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="8dp"
-    android:background="@android:color/background_dark">
+    android:background="@drawable/grey_gradient_background">
+
+    <ImageView
+        android:id="@+id/iv_sentadata_logo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/sentadata" />
 
     <EditText
         android:id="@+id/et_url"
+        android:layout_below="@id/iv_sentadata_logo"
         android:layout_marginBottom="8dp"
         android:textColor="@android:color/primary_text_light"
         style="@style/editText_style_blue"
@@ -18,7 +24,7 @@
         android:paddingLeft="15dp"
         android:textColorHint="#666"
         android:paddingTop="8dp"
-        android:hint="@string/url"
+        android:hint="@string/server"
         android:inputType="textUri"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
@@ -69,11 +75,14 @@
     <Button
         android:id="@+id/btn_login"
         android:layout_below="@id/et_password"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_width="fill_parent"
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="@string/login" />
 
     <CheckBox

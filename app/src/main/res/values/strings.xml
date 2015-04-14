@@ -26,7 +26,8 @@
     <string name="login_failed">Login failed</string>
     <string name="exit">Exit</string>
     <string name="url">URL</string>
-    <string name="please_enter_a_valid_url">Pleasae enter a valid url</string>
+    <string name="server">Server</string>
+    <string name="please_enter_a_valid_url">Please enter a valid url</string>
     <string name="sending_data_to_senta_secure_server">Sending data to Senta secure server…</string>
     <string name="set_demo_user">Set demo user</string>
 
