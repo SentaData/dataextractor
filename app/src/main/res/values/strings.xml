@@ -30,6 +30,14 @@
     <string name="please_enter_a_valid_url">Please enter a valid url</string>
     <string name="sending_data_to_senta_secure_server">Sending data to Senta secure server…</string>
     <string name="set_demo_user">Set demo user</string>
+    <string name="accept_agreement">Accept Agreement</string>
+    <string name="eula_text">This application is released under the GPL, as such it is provided
+        with no warranty and no liability regarding its fitness for purpose.\n
+        \n
+        This application monitors and analyses system parameters and processes in your device(s).\n
+        It will not search your emails, contacts, messages phone calls or other personal data. It may consume a large amount of data compared to other applications, but this should not be more than a few hundred megabytes per month.</string>
+    <string name="ok">OK</string>
+    <string name="check_data_settings">Check Data settings</string>
 
     <!-- With your help we intend to build a system that secures your data to your unique identity.
     Your personal data will not be extracted! The files are very small and will not consume a noticeable amount of data or drain the battery.
