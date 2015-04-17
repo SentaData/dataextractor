@@ -33,10 +33,11 @@
         android:id="@+id/cb_accept_agreement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/accept_agreement"
+        android:text="@string/ok"
         android:textColor="@android:color/primary_text_dark"
         android:layout_below="@id/sv_license"
         android:layout_centerHorizontal="true"
+        android:visibility="gone"
         android:layout_marginTop="25dp" />
 
     <Button
