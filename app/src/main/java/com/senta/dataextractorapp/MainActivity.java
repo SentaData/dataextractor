@@ -13,8 +13,10 @@ import android.widget.Toast;
 
 import com.senta.dataextractor.StWsDataExtractionService;
 
+/**
+ * This is the applications main Activity
+ */
 public class MainActivity extends ActionBarActivity {
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,9 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * Method that handles application exit: Shows a relevant message to the user, stops the service and finishes the activity
+     */
     private void exitApp() {
         Toast.makeText(MainActivity.this, "Stopping data extraction...", Toast.LENGTH_LONG).show();
         stopService(new Intent(MainActivity.this, StWsDataExtractionService.class));

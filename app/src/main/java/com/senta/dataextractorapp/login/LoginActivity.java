@@ -24,7 +24,9 @@ import com.senta.dataextractorapp.R;
 import com.senta.dataextractorapp.utils.AppPreferences;
 import com.squareup.otto.Subscribe;
 
-
+/**
+ * Activity for logging in the system and starting the service
+ */
 public class LoginActivity extends ActionBarActivity {
 
     private EditText etEmail, etPassword, etUrl;
@@ -53,8 +55,13 @@ public class LoginActivity extends ActionBarActivity {
         setupDefaultUserBtn(setDefaultUserBtn);
     }
 
-    private void setupDefaultUserBtn(Button setDefaultUserBtn) {
-        setDefaultUserBtn.setOnClickListener(new View.OnClickListener() {
+    /**
+     * Handles the click on "Set default user" button
+     *
+     * @param defaultUserBtn The default user button
+     */
+    private void setupDefaultUserBtn(Button defaultUserBtn) {
+        defaultUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 etEmail.setText(Constants.DEMO_USERNAME);
@@ -80,6 +87,10 @@ public class LoginActivity extends ActionBarActivity {
         BusProvider.getInstance().unregister(this);
     }
 
+    /**
+     * The method for Handing the Login Button click.
+     * Performs validation checks on the user input
+     */
     private void setupLoginButton() {
         loginBtn = (Button) findViewById(R.id.btn_login);
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -106,12 +117,23 @@ public class LoginActivity extends ActionBarActivity {
         });
     }
 
+    /**
+     * Updates the ui elements according to if there is an ongoing api call
+     *
+     * @param ongoing True if there is an ongoing api call
+     */
     private void setUiElementsForApiCall(boolean ongoing) {
         loginBtn.setEnabled(!ongoing);
         rememberMe.setEnabled(!ongoing);
         apiCallOnProgress.setVisibility(ongoing ? View.VISIBLE : View.GONE);
     }
 
+    /**
+     * Method for performing an api call by calling an {@link AsyncTask}
+     *
+     * @param emailText    The string containing the user's username/email
+     * @param passwordText The string for the user's password
+     */
     private void performAPIcall(final String emailText, final String passwordText) {
         new AsyncTask<Void, Void, RegistrationAction>() {
 
@@ -127,6 +149,13 @@ public class LoginActivity extends ActionBarActivity {
         }.execute();
     }
 
+    /**
+     * Method for saving fields into shared preferences
+     *
+     * @param emailText    String for the user's email/username
+     * @param passwordText String containing the user's password
+     * @param urlText      String for the servcer's url
+     */
     private void saveCredentialsToPrefs(String emailText, String passwordText, String urlText) {
         if (rememberMe.isChecked()) {
             AppPreferences.setUsername(emailText);
@@ -135,6 +164,11 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * Otto "callback". Listens for apiCallFinished events
+     *
+     * @param apiCallFinishedEvent The event that the api call finished
+     */
     @Subscribe
     public void onApiCallFinished(ApiCallFinished apiCallFinishedEvent) {
         setUiElementsForApiCall(false);
@@ -145,6 +179,10 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * Method for handling the successful api call. Saves all the fields (username, password, url)
+     * into static variables in app class and in shared preferences.
+     */
     private void handleSuccessfulApiCall() {
         Toast.makeText(LoginActivity.this, getString(R.string.login_successful), Toast.LENGTH_LONG).show();
         DataExtractorApp.setUsername(emailText);

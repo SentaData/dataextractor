@@ -9,7 +9,19 @@ import com.senta.dataextractor.StWsDataExtractionService;
 import com.senta.dataextractorapp.DataExtractorApp;
 import com.senta.dataextractorapp.utils.AppPreferences;
 
+/**
+ * This BroadcastReceiver is responsible for starting the Data Extraction Service.
+ * Listens for the android.intent.action.BOOT_COMPLETED intent.
+ */
 public class OnBootReceiver extends BroadcastReceiver {
+    /**
+     * This method is triggered whenever the Broadcast receiver receives an intent.
+     * Starts the DataExtraction service, putting extra the username, password and url stored in app's
+     * shared preferences.
+     *
+     * @param context The context of the Broadcast receiver
+     * @param i       The intent received
+     */
     @Override
     public void onReceive(Context context, Intent i) {
         Intent DataExtractionIntent = new Intent(context, StWsDataExtractionService.class);

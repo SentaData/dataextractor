@@ -12,7 +12,9 @@ import com.senta.dataextractorapp.DataExtractorApp;
 import com.senta.dataextractorapp.MainActivity;
 import com.senta.dataextractorapp.R;
 
-
+/**
+ * Activity showing the License of the app on application start
+ */
 public class EulaActivity extends ActionBarActivity {
 
     private CheckBox acceptEula;
@@ -29,6 +31,10 @@ public class EulaActivity extends ActionBarActivity {
         setupAcceptButton();
     }
 
+    /**
+     * Handle the Ok click
+     * Since currently the license is GPL, the checkbox is checked and hidden from the user.
+     */
     private void setupAcceptButton() {
         Button acceptBtn = (Button) findViewById(R.id.btn_accept);
         acceptBtn.setOnClickListener(new View.OnClickListener() {
