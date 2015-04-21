@@ -1,0 +1,11 @@
+com.senta.dataextractor
+com.senta.dataextractor.interfaces
+com.senta.dataextractor.otto
+com.senta.dataextractor.otto.events
+com.senta.dataextractor.parameters
+com.senta.dataextractor.utils
+com.senta.dataextractor.xallegro.api
+com.senta.dataextractorapp
+com.senta.dataextractorapp.boot
+com.senta.dataextractorapp.login
+com.senta.dataextractorapp.utils
